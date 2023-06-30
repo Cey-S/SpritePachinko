@@ -10,6 +10,6 @@ public class Coin : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         IncreaseCoinCount?.Invoke();
-        Destroy(gameObject);
+        gameObject.SetActive(false); // return to the pool
     }
 }
