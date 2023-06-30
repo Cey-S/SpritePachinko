@@ -9,6 +9,9 @@ public class Coin : MonoBehaviour
     public delegate void OnCountChange();
     public static event OnCountChange IncreaseCoinCount;
 
+    public delegate void OnInteraction(int id);
+    public static event OnInteraction CollideWithChest;
+
     private void Update()
     {
         if (transform.position.y < YPosBoundary)
@@ -19,6 +22,7 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        CollideWithChest?.Invoke(collision.GetComponent<Chest>().ID);
         IncreaseCoinCount?.Invoke();
         gameObject.SetActive(false); // return to the pool
     }
