@@ -136,3 +136,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1073adb5a41b6c2469c8b4b7f8cf5fd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  YPosBoundary: -6
